@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap" rel="stylesheet">
+        <title>Hall of the Triumphant</title>
+        <link rel="stylesheet" href="triumph.css">
+        <link rel="icon" type="image/jpeg" href="Assets_Triumph/triumph_ icon.jpg">
+    </head>
+    <body>
+        <div id="startPageTriumph" class="startTextTriumph">
+            Current Progress: 
+            <p>&check;  Level 1: Dawn</p>
+            <p>&check;  Level 2: Daylight</p>
+            <p>&check;  Level 3: Concealing Forest</p>
+            <p id="triumphStart">
+                You have faced every obstacle in your way. Claim your trophy, victor,
+                and celebrate for you have triumphed. However, keep in mind, the journey
+                is far from over. Continue to gather every bit of knowledege,
+                for you shall forge them into the finest of wisdoms.
+            </p>
+            <p id="triumphContinue">If you are ready to continue, click the button below.</p>
+            <button id="continue_button">Continue</button>
+            
+        </div>
+
+        <div class="mainContent" id="mainContent">
+            <img src="Assets_Triumph/sound_on.png" id="soundOn">
+            <audio id="music_2" autoplay loop> <source src="Assets_Triumph/Somersault.mp3"> </audio>
+            <audio id="click_sfx"> <source src="Assets_Triumph/click_sfx.mp3"> </audio>
+            <p id="textIntro">CLAIM THE TROPHY.</p>
+            <button id="inside_button">Go Inside</button>
+            
+        </div>
+    
+        <div class="mirror" id="mirror">
+            <div class="dialogues" id="dialogues">
+                <p id="mirrorDialogue">...</p>
+            </div>
+
+            <div class="bottom-section">
+                <p id="hint">tniH</p>
+                <label id="answerLabel" for="answer">Answer:</label>
+                <select id="answer">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                <button id="submit_button">Submit</button>
+            </div>
+        </div>
+        
+        
+        <p id="answerError"><br></p>
+        
+        <script src="triumph.js"></script>
+    </body>
+    
+</html>
