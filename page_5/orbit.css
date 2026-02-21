@@ -1,0 +1,264 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    animation:  float 3s ease-in-out infinite;  
+    font-family: "Tagesschrift", system-ui;
+    overflow: hidden;
+    display: flex;
+    min-height: 100dvh;
+    max-width: 100dvw;
+    max-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("Assets_Orbit/background_orbit.png");
+    background-size: cover;
+    background-position: center; 
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+
+
+
+/*Start Page*/
+#orbitStartPage {
+    position: absolute;
+    display: flex;
+    min-height: 105%;
+    min-width: 100dvw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("Assets_Orbit/start_page_bg.png");
+    background-size: cover;
+    transition: opacity 2s ease;
+    width: 100%;
+    font-size: clamp(14px, 3.0vw, 20px);
+    color:#CBAB60;
+    overflow: hidden;
+}
+
+
+#orbitStart, #orbitContinue {
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+#identityProof {
+    font-family: "Tagesschrift", system-ui;
+    font-size: 18px;
+    border-radius: 8px;
+    border: none;
+    padding: 10px 16px;
+    margin-top: 18px;
+    margin-bottom: 12px;
+    width: 200px;
+    background: rgba(255,255,255,0.10);
+    color: #CBAB60;
+    text-shadow: 1px 1.5px  #0C274A;
+    outline: none;
+    transition: 200ms;
+    font-size: 16px;
+}
+
+#identityProof {
+    background: rgba(255,255,255,0.18);
+    scale: 1.05;
+}
+
+#submit_identity, #read_button {
+    font-family: "Tagesschrift", system-ui;
+    transition: 300ms ease;
+    color: #0C274A;
+    height: 60px;
+    font-size: clamp(16px, 3.0vw, 20px);
+    text-align: center;
+    padding: 10px 10px;
+    border-radius: 45px 45px;
+    border: none;
+    background-color: #CBAB60;
+    
+}
+
+#submit_identity:hover, #read_button:hover {
+    background-color: #0C274A;
+    color: #CBAB60;
+    scale: 1.2;
+}
+
+#read_button {
+    width: 80px;
+}
+
+/*Main Page*/
+.mainContent {
+    transition: 300ms ease;
+    display: flex;
+    color: #CBAB60;
+    text-shadow: 1px 1.5px  #0C274A;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto; 
+    max-height: 100dvh; 
+    width: 100%;
+    padding: 20px; 
+    overflow: hidden;
+    display: none;
+}
+
+ #textIntro {
+    font-size: clamp(28px, 6vw, 50px);
+    padding-right: 30px;
+    padding-left: 30px;
+    text-align: center;
+}
+
+.message {
+    animation: grow .1s linear;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(14px, 3.0vw, 20px);
+
+    color: #CBAB60;
+    text-shadow: 1px 1.5px  #0C274A;
+    height: calc((70dvw * 1) / 1.6); 
+    width: 70dvw;
+
+    background-image: url(Assets_Orbit/frame_landscape.png);
+    background-position: center;
+    background-size: cover;
+
+    z-index: 1;
+    display: none;
+}
+
+/* Navigation buttons for message */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 2;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#prev_button {
+    left:80px;
+}
+
+#next_button {
+    right: 60px;
+}
+
+.nav-btn img {
+    transition: ease 0.3s;
+    width: 100%;
+    height: auto;
+    max-width: 60px;
+    max-height: 60px;
+    pointer-events: none;
+    user-select: none;
+}
+
+.nav-btn:hover img {
+    filter: brightness(1.2);
+    scale: 1.05;
+}
+
+
+#textMessage {
+    margin-left: 150px;
+    margin-right: 150px;
+    transition: opacity 0.3s;
+    opacity: 1;
+    text-align: justify;
+}
+
+.fade-in {
+    opacity: 1 !important;
+    transition: opacity 0.3s;
+}
+
+.fade-out {
+    opacity: 0 !important;
+    transition: opacity 0.3s;
+}
+
+/*Animations and Media*/
+@keyframes float {
+    0%, 100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-4px);
+    }
+}
+
+
+@keyframes shadow {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(0.8);
+        opacity: 0.8;
+    }
+}
+
+
+@keyframes grow {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+@media (max-width: 600px) {
+    #soundOn{
+        height: 75px;
+    }
+
+    .message {
+        width: calc((80dvh * 1) / 1.57); 
+        height: 80dvh;
+        background-image: url(Assets_Orbit/frame_portrait.png);
+    }
+    
+    #prev_button {
+        left:5px;
+        width: 45px;
+        height: 45px;
+    }
+
+    #next_button {
+        right: 5px;
+        width: 45px;
+        height: 45px;
+    }
+
+    #textMessage {
+        margin-left: 48px;
+        margin-right: 48px;
+    }
+
+}
