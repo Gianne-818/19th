@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap" rel="stylesheet">
+        <title>Concealing Forest</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/jpeg" href="Assets/forest_icon.jpg">
+    </head>
+    <body>
+        <div id="start_page" class="start-text">
+            Current Progress: 
+            <p>&check;  Level 1: Dawn</p>
+            <p>&check;  Level 2: Daylight</p>
+            <p id="intro_text">
+                You've passed through the dawn when you were born, and played in the daylight
+                as a kid. In your current level, you welcome all hidden struggles as you
+                let the rain in the forest be your tears that foster all foundational growth.
+                Pass through the forest, and yield the trophy of the triumphant.
+            </p>
+            <p id="continue-text">If you are ready to continue, click the button below.</p>
+            <button id="start_button">Continue</button>
+            <p id="musicInfo">Wearing headphones or earphones may boost your experience.</p>
+        </div>
+
+        <div class="scrollable-container" id="login_page">
+            <img src="Assets/sound_on.png" id="soundOn">
+
+            <audio id="music_1" autoplay loop>
+                <source src="Assets\Waltzing in the Rain.mp3">
+            </audio>
+
+            <audio id="click_sfx">
+                <source src="Assets/click_sfx.mp3">
+            </audio>
+
+            <p id="intro">WELCOME.</p>
+            
+            <form id="userForm" onsubmit="return formValidation()">
+                <label style="color: #bec5ae ; text-shadow: 1px 1.5px #4e6a76;"> Username: <input type="text" id="username"></label><br><br>
+                <label style="color: #bec5ae; text-shadow: 1px 1.5px #4e6a76;">Password: <input type="password" id="password"></label>
+                <br><br>
+                <input type="submit" id="submit">
+            </form>
+
+            <p id="userError"></p>
+            <p id="passError"></p>
+            <p id="hint"></p>
+
+            <img src="Assets/leaves_2.png" class="shrub left">
+            <img src="Assets/leaves_2.png" class="shrub right">
+        </div>
+        
+    </body>
+    <script src="script.js"></script>
+</html>
